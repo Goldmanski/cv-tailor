@@ -20,7 +20,7 @@ The application allows users to enter their professional information, validate t
 
 ## Main Application
 
-The main interface allows users to enter their personal information, professional background, and additional CV data.
+The main interface guides users through the essential information needed to tailor their CV to a specific job opportunity. Additional professional details can be added optionally.
 
 ![Main Application](screenshots/workflow1.PNG)
 
@@ -28,9 +28,9 @@ The main interface allows users to enter their personal information, professiona
 
 ## CV Data and Validation
 
-Users can add projects, education, courses, languages, portfolio information, and other professional details.
+Users can optionally add their experience, education, skills, projects, languages, portfolio information, and other professional details.
 
-The application validates the entered information and provides feedback when the generated CV requires too much space.
+The application validates the provided data and gives feedback when the generated CV requires too much space.
 
 ![CV Data and Validation](screenshots/workflow2.PNG)
 
@@ -223,16 +223,15 @@ The application will open in the browser.
 
 # 📄 Example Workflow
 
-1. Enter personal information.
-2. Provide professional background and experience.
-3. Add projects, education, courses, skills, languages, and portfolio information.
-4. Provide the target job offer and company information.
-5. Submit the CV data.
-6. Validate the entered information.
-7. Generate the tailored professional profile using the OpenAI API.
-8. Generate the CV document.
-9. Review the generated CV.
-10. Download the final PDF.
+1. Enter your personal information.
+2. Add a short description of yourself and your professional profile.
+3. Provide the target job offer.
+4. Add information about the employer and the role.
+5. Optionally add your experience, education, skills, projects, languages, portfolio, and other relevant details.
+6. Validate the provided information.
+7. Generate the tailored CV.
+8. Review the generated document.
+9. Download the final CV as a PDF.
 
 ---
 
