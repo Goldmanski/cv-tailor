@@ -1,0 +1,8 @@
+.env
+08__0__cv_structure.ipynb
+08__1__cv_intro_generator.ipynb
+08__2__cv_factory.ipynb
+__pycache__/
+*.pyc
+.vscode/
+cv.md
