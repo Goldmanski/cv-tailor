@@ -49,15 +49,15 @@ The application validates required fields and prevents CV generation when requir
 CVTailor can generate different CV structures depending on the candidate's background and the information provided.
 
 <p align="center">
-  <img src="screenshots/cv1.PNG" width="400">
+  <img src="screenshots/cv1.PNG" width="600">
 </p>
 
 <p align="center">
-  <img src="screenshots/cv2.PNG" width="400">
+  <img src="screenshots/cv2.PNG" width="600">
 </p>
 
 <p align="center">
-  <img src="screenshots/cv3.PNG" width="400">
+  <img src="screenshots/cv3.PNG" width="600">
 </p>
 
 ---
