@@ -395,15 +395,57 @@ if "tailor_requested" not in st.session_state:
 # APP HEADER
 # ==================================================
 
-st.markdown(
-    """
-    <div class="app-title">CVTailor</div>
-    <div class="app-subtitle">
-        Tailor your CV to every opportunity.
-    </div>
-    """,
-    unsafe_allow_html=True,
-)
+st.markdown("""
+<h1 style="
+    font-size: 2.8rem;
+    margin-bottom: 0.15rem;
+">
+    ✨ CVTailor
+</h1>
+
+<p style="
+    font-size: 1rem;
+    color: #9aa0a6;
+    font-style: italic;
+    margin-top: 0;
+    margin-bottom: 1.8rem;
+">
+    Tailor your CV to every opportunity.
+</p>
+
+<p style="
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 1.2rem;
+">
+    <strong>Chcesz dopasować swoje CV do konkretnego stanowiska?</strong>
+    Uzupełnij dane o sobie, wklej treść ogłoszenia i opisz pracodawcę.
+    CVTailor wykorzysta AI, aby przygotować dokument dopasowany do wybranej roli.
+    Możesz również dodać swoje doświadczenie, wykształcenie, umiejętności i projekty,
+    aby jeszcze lepiej zaprezentować swoje mocne strony.
+</p>
+""", unsafe_allow_html=True)
+
+with st.expander("💡 Jak to działa?"):
+    st.markdown("""
+    **1. Zacznij od podstaw**  
+    Podaj swoje dane oraz krótko opowiedz o sobie.
+
+    **2. Wybierz ofertę**  
+    Wklej treść ogłoszenia, na które chcesz odpowiedzieć.
+
+    **3. Opisz pracodawcę**  
+    Dodaj najważniejsze informacje o firmie, jej działalności, technologii lub kulturze organizacyjnej.
+
+    **4. Rozwiń swój profil — opcjonalnie**  
+    Możesz uzupełnić doświadczenie zawodowe, wykształcenie, umiejętności, projekty, języki i inne elementy, które chcesz pokazać.
+
+    **5. Dopasuj CV**  
+    CVTailor przeanalizuje całość i przygotuje dokument dopasowany do wybranego stanowiska oraz pracodawcy.
+
+    **6. Pobierz gotowy dokument**  
+    Twoje spersonalizowane CV będzie dostępne w formacie PDF.
+    """)
 
 # ==================================================
 # SIDEBAR — CV DATA
