@@ -4,7 +4,15 @@ An AI-powered Streamlit application for creating professional, job-tailored CVs 
 
 CVTailor allows users to enter their professional information, provide a target job offer and company details, and generate a tailored professional profile using the OpenAI API.
 
-The application combines AI-generated content with deterministic PDF generation, validation, and dynamic document layout.
+The application combines AI-generated content with deterministic PDF generation, input validation, and dynamic document layout.
+
+---
+
+# 🚀 Live Demo
+
+https://cv-tailor-ai.streamlit.app
+
+The application allows users to enter their professional information, validate the provided data, generate a tailored CV, and download the final document as a PDF.
 
 ---
 
@@ -14,17 +22,17 @@ The application combines AI-generated content with deterministic PDF generation,
 
 The main interface allows users to enter their personal information, professional background, and additional CV data.
 
-![Main Application](screenshots/workflow1.png)
+![Main Application](screenshots/workflow1.PNG)
 
 ---
 
 ## CV Data and Validation
 
-Users can add projects, experience, education, skills, languages, and other information.
+Users can add projects, education, courses, languages, portfolio information, and other professional details.
 
-The application validates the entered data and provides feedback when the generated CV requires too much space.
+The application validates the entered information and provides feedback when the generated CV requires too much space.
 
-![CV Data and Validation](screenshots/workflow2.png)
+![CV Data and Validation](screenshots/workflow2.PNG)
 
 ---
 
@@ -32,169 +40,35 @@ The application validates the entered data and provides feedback when the genera
 
 The application validates required fields and prevents CV generation when required information is missing or invalid.
 
-![Input Validation](screenshots/workflow3.png)
+![Input Validation](screenshots/workflow3.PNG)
 
 ---
 
-# 📄 Generated CV Examples
+## Generated CVs
 
-The generator was tested with different professional profiles and career levels.
+CVTailor can generate different CV structures depending on the candidate's background and the information provided.
 
-## Junior Python Developer
+![Generated CV 1](screenshots/cv1.PNG)
 
-A junior IT profile focused on Python development, backend projects, technical skills, education, courses, and portfolio.
+![Generated CV 2](screenshots/cv2.PNG)
 
-![Junior Python Developer](screenshots/cv2.png)
-
----
-
-## Senior AI Engineer
-
-A senior technical profile with extensive professional experience, education, portfolio, and language information.
-
-![Senior AI Engineer](screenshots/cv1.png)
-
----
-
-## Marketing Specialist
-
-A non-technical profile demonstrating that the application can generate CVs for different industries and different combinations of available information.
-
-![Marketing Specialist](screenshots/cv3.png)
+![Generated CV 3](screenshots/cv3.PNG)
 
 ---
 
 # ✨ Features
 
-- Structured CV data input
-- Personal and contact information
-- Job offer input
-- Company information
-- AI-generated professional profile
-- Projects
-- Work experience
-- Technical skills
-- Education
-- Courses
-- Languages
-- Volunteering and other activities
-- Portfolio
-- Dynamic CV layout
-- One-page PDF generation
-- PDF preview
-- PDF download
-- Input validation
-- URL validation
-- One-page content validation
-- Custom fonts
-- Clickable email, phone, LinkedIn, GitHub, and portfolio links
-
----
-
-# 🤖 AI Profile Generation
-
-The professional profile is generated using the OpenAI API.
-
-The model receives:
-
-- candidate information,
-- job offer information,
-- company information.
-
-The prompt is designed to generate a short professional profile written in the first person.
-
-The generated profile is constrained to:
-
-- 2–3 sentences,
-- approximately 300 characters,
-- natural and concise language,
-- relevant experience and skills,
-- information provided by the candidate only.
-
-The prompt also prevents generic AI-style statements and unsupported claims.
-
----
-
-# 📄 PDF Generation
-
-The final CV is generated as a one-page PDF using ReportLab.
-
-The PDF generator is responsible for:
-
-- document layout,
-- typography,
-- custom fonts,
-- section headings,
-- spacing,
-- hyperlinks,
-- bullet points,
-- dynamic lower-section layout,
-- one-page validation.
-
-The application prevents the final document from being generated when the CV cannot fit on a single page.
-
----
-
-# 🏛 Architecture
-
-The application follows a simple pipeline combining structured user input, AI-generated content, and deterministic PDF generation.
-
-    User
-     │
-     ▼
-    Streamlit UI
-     │
-     ├── Personal information
-     ├── Job offer
-     ├── Company information
-     ├── Projects
-     ├── Experience
-     ├── Skills
-     ├── Education
-     ├── Courses
-     ├── Languages
-     └── Additional activities
-     │
-     ▼
-    OpenAI API
-     │
-     └── Professional profile generation
-     │
-     ▼
-    CV Data
-     │
-     ▼
-    ReportLab PDF Generator
-     │
-     ├── Layout
-     ├── Typography
-     ├── Sections
-     ├── Links
-     └── One-page validation
-     │
-     ▼
-    PDF Preview
-     │
-     ▼
-    PDF Download
-
-### Main Components
-
-**Streamlit**
-
-Responsible for the user interface, form handling, validation, preview, and application flow.
-
-**OpenAI API**
-
-Generates the professional profile based on the candidate's information, target position, and company.
-
-**CV Factory**
-
-Contains reusable templates and helper functions used to structure CV content.
-
-**ReportLab**
-
-Generates the final one-page PDF document and handles the document layout.
+- Generate job-tailored professional profiles using the OpenAI API
+- Enter and manage personal and professional information
+- Add projects, education, courses, languages, portfolio, and additional activities
+- Validate required input fields
+- Validate generated CV length and available page space
+- Generate one-page PDF CV documents
+- Dynamically adapt the PDF layout to the provided content
+- Use custom fonts in generated PDF documents
+- Download the generated CV directly from the application
+- Manage API credentials through a local `.env` file and Streamlit Secrets
+- Deploy the application using Streamlit
 
 ---
 
@@ -205,31 +79,98 @@ Generates the final one-page PDF document and handles the document layout.
 - OpenAI API
 - ReportLab
 - python-dotenv
-- Git / GitHub
+
+---
+
+# 🏛 Architecture
+
+The application follows a simple pipeline combining structured user input, AI-generated content, validation, and deterministic PDF generation.
+
+    User
+     │
+     ├── Personal information
+     ├── Professional experience
+     ├── Projects
+     ├── Education
+     ├── Skills
+     └── Additional information
+     │
+     ▼
+    Streamlit
+     │
+     ▼
+    Input Validation
+     │
+     ├── Missing required fields
+     └── Invalid input
+     │
+     ▼
+    OpenAI API
+     │
+     ▼
+    Tailored Professional Profile
+     │
+     ▼
+    CV Factory
+     │
+     ▼
+    PDF Generator
+     │
+     ├── Dynamic layout
+     ├── Custom fonts
+     └── One-page validation
+     │
+     ▼
+    Generated CV
+     │
+     ▼
+    PDF Download
+
+---
+
+## Main Components
+
+**Streamlit**
+
+Provides the user interface, form handling, validation feedback, CV preview, and PDF download functionality.
+
+**OpenAI API**
+
+Generates a short professional profile tailored to the candidate's background and target job offer.
+
+**CV Factory**
+
+Responsible for constructing the CV content and organizing individual sections such as projects, education, courses, languages, and other information.
+
+**ReportLab**
+
+Generates the final PDF document and handles the document layout.
+
+**Custom Fonts**
+
+DejaVu Sans fonts are included in the project and used when generating the PDF document.
 
 ---
 
 # 📁 Project Structure
 
     .
-    ├── fonts/
-    │   ├── DejaVuSans.ttf
-    │   └── DejaVuSans-Bold.ttf
-    │
-    ├── screenshots/
-    │   ├── workflow1.png
-    │   ├── workflow2.png
-    │   ├── workflow3.png
-    │   ├── cv1.png
-    │   ├── cv2.png
-    │   └── cv3.png
-    │
     ├── app.py
     ├── cv_factory.py
     ├── pdf_generator.py
     ├── requirements.txt
     ├── .gitignore
-    └── README.md
+    ├── README.md
+    ├── fonts/
+    │   ├── DejaVuSans.ttf
+    │   └── DejaVuSans-Bold.ttf
+    └── screenshots/
+        ├── cv1.PNG
+        ├── cv2.PNG
+        ├── cv3.PNG
+        ├── workflow1.PNG
+        ├── workflow2.PNG
+        └── workflow3.PNG
 
 ---
 
@@ -258,7 +199,7 @@ Install dependencies:
 
     pip install -r requirements.txt
 
-Create a `.env` file in the project root:
+Create a `.env` file containing the required OpenAI API key:
 
     OPENAI_API_KEY=your_openai_api_key
 
@@ -266,26 +207,26 @@ Create a `.env` file in the project root:
 
 # ▶️ Run
 
-Start the Streamlit application:
+Start the application with:
 
     streamlit run app.py
 
-The application will open in your browser.
+The application will open in the browser.
 
 ---
 
 # 📄 Example Workflow
 
-1. Enter personal and contact information.
-2. Add information about professional experience and skills.
-3. Add projects, education, courses, languages, and other relevant information.
-4. Provide the target job offer.
-5. Optionally provide information about the company.
-6. Generate the professional profile using OpenAI.
-7. Review the generated CV.
-8. Check validation messages if the CV exceeds the available space.
-9. Generate the final PDF.
-10. Preview and download the CV.
+1. Enter personal information.
+2. Provide professional background and experience.
+3. Add projects, education, courses, skills, languages, and portfolio information.
+4. Provide the target job offer and company information.
+5. Submit the CV data.
+6. Validate the entered information.
+7. Generate the tailored professional profile using the OpenAI API.
+8. Generate the CV document.
+9. Review the generated CV.
+10. Download the final PDF.
 
 ---
 
@@ -293,30 +234,31 @@ The application will open in your browser.
 
 The project focuses on:
 
-- Combining generative AI with deterministic document generation
-- Creating job-tailored professional profiles
-- Keeping AI-generated content concise and controlled
-- Supporting different career levels and industries
-- Maintaining a one-page CV constraint
-- Providing clear validation feedback
-- Separating CV content generation from PDF rendering
-- Creating a simple and practical user experience
+- Practical integration of an LLM into a real application
+- Structured collection and validation of user data
+- Separating AI-generated content from deterministic document generation
+- Generating professional one-page PDF documents
+- Dynamic document layout
+- Handling incomplete and invalid user input
+- Building a complete AI-powered application with Streamlit
+- Deploying an AI-powered application
 
 ---
 
 # 🔮 Possible Future Improvements
 
-- Additional CV templates
+- Support for multiple CV templates
+- Additional PDF styling options
 - More advanced job-description analysis
-- Multilingual CV generation
-- Additional PDF layouts
-- More granular AI customization
-- Export to additional document formats
-- Additional CV validation rules
-- Improved customization of typography and spacing
+- More extensive CV content tailoring
+- Support for multiple languages
+- Persistent user profiles
+- CV version management
+- Improved ATS optimization
+- Additional export formats
 
 ---
 
 # 👤 Author
 
-Created by Eliasz Nowicki as a portfolio project focused on Python, AI Engineering, generative AI, Streamlit application development, and document generation.
+Created by **Eliasz Nowicki** as a portfolio project focused on Python, AI Engineering, LLM integration, Streamlit application development, and automated document generation.
