@@ -36,14 +36,6 @@ The application validates the provided data and gives feedback when the generate
 
 ---
 
-## Input Validation
-
-The application validates required fields and prevents CV generation when required information is missing or invalid.
-
-![Input Validation](screenshots/workflow3.PNG)
-
----
-
 ## Generated CVs
 
 CVTailor can generate different CV structures depending on the candidate's background and the information provided.
