@@ -165,9 +165,8 @@ DejaVu Sans fonts are included in the project and used when generating the PDF d
         ├── cv2.PNG
         ├── cv3.PNG
         ├── workflow1.PNG
-        ├── workflow2.PNG
-        └── workflow3.PNG
-
+        └── workflow2.PNG
+        
 ---
 
 # 🚀 Installation
