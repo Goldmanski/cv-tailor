@@ -20,7 +20,7 @@ The application allows users to enter their professional information, validate t
 
 ## Main Application
 
-The main interface guides users through the essential information needed to tailor their CV to a specific job opportunity. Additional professional details can be added optionally.
+The main interface guides users through the information required to tailor their CV to a specific job opportunity. Additional professional details can be added optionally.
 
 ![Main Application](screenshots/workflow1.PNG)
 
@@ -28,9 +28,7 @@ The main interface guides users through the essential information needed to tail
 
 ## CV Data and Validation
 
-Users can optionally add their experience, education, skills, projects, languages, portfolio information, and other professional details.
-
-The application validates the provided data and gives feedback when the generated CV requires too much space.
+The application validates the provided CV data and gives feedback when required information is missing or when the generated CV requires too much space.
 
 ![CV Data and Validation](screenshots/workflow2.PNG)
 
