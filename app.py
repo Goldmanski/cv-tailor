@@ -443,6 +443,8 @@ with st.expander("💡 Jak to działa?"):
     **5. Dopasuj CV**  
     CVTailor przeanalizuje całość i przygotuje dokument dopasowany do wybranego stanowiska oraz pracodawcy.
 
+    Nie odpowiada Ci wygenerowane CV? Zmień opis lub kliknij „Dopasuj CV” ponownie, a AI zaproponuje zmodyfikowaną wersję.
+
     **6. Pobierz gotowy dokument**  
     Twoje spersonalizowane CV będzie dostępne w formacie PDF.
     """)

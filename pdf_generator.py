@@ -616,7 +616,13 @@ def generate_cv_pdf(
 # EDUCATION
 # --------------------------------------------------
 
-    if education:
+    school_items = [
+        item
+        for item in education
+        if item["type"] == "school"
+    ]
+
+    if school_items:
         education_section = [
             HRFlowable(
                 width="100%",
@@ -634,80 +640,76 @@ def generate_cv_pdf(
             Spacer(1, 4),
         ]
 
-        for item in education:
-            if item["type"] == "school":
-                degree = item["degree"].strip().replace(" ", "\u00A0")
-                years = item["years"].strip().replace(" ", "\u00A0")
-                school = item["school"].strip().replace(" ", "\u00A0")
+        for item in school_items:
+            degree = item["degree"].strip().replace(" ", "\u00A0")
+            years = item["years"].strip().replace(" ", "\u00A0")
+            school = item["school"].strip().replace(" ", "\u00A0")
 
-                education_section.append(
-                    Paragraph(
-                        f"<b>{degree}</b> — {school}",
-                        project_title_style,
-                    )
-                )
-
-                education_section.append(
-                    Paragraph(
-                        f"•\u00A0{years}",
-                        bullet_body_style,
-                    )
-                )
-
-        course_items = [
-            item
-            for item in education
-            if item["type"] == "course"
-        ]
-
-        if course_items:
             education_section.append(
-                HRFlowable(
-                    width="100%",
-                    thickness=0.5,
-                    color=colors.lightgrey,
-                    spaceBefore=6,
-                    spaceAfter=7,
+                Paragraph(
+                    f"<b>{degree}</b> — {school}",
+                    project_title_style,
                 )
             )
 
             education_section.append(
-                SpacedHeading(
-                    "Kursy",
-                    font_name="DejaVuSans-Bold",
-                    font_size=10,
-                    char_space=2.5,
+                Paragraph(
+                    f"•\u00A0{years}",
+                    bullet_body_style,
                 )
             )
-
-            education_section.append(
-                Spacer(1, 4)
-            )
-
-            education_section.append(
-                Spacer(1, 4)
-            )
-
-            for item in course_items:
-                course = item["course"].strip().replace(" ", "\u00A0")
-                provider = item["provider"].strip().replace(" ", "\u00A0")
-                date = item["date"].strip().replace(" ", "\u00A0")
-
-                education_section.append(
-                    Paragraph(
-                        f"<b>{course}</b> — {provider}",
-                        project_title_style,
-                    )
-                )
-
-                education_section.append(
-                    Paragraph(
-                        f"•\u00A0{date}",
-                        bullet_body_style,
-                    )
-                )
 
         bottom_sections.append(education_section)
+
+
+# --------------------------------------------------
+# COURSES
+# --------------------------------------------------
+
+    course_items = [
+        item
+        for item in education
+        if item["type"] == "course"
+    ]
+
+    if course_items:
+        courses_section = [
+            HRFlowable(
+                width="100%",
+                thickness=0.5,
+                color=colors.lightgrey,
+                spaceBefore=6,
+                spaceAfter=7,
+            ),
+            SpacedHeading(
+                "Kursy",
+                font_name="DejaVuSans-Bold",
+                font_size=10,
+                char_space=2.5,
+            ),
+            Spacer(1, 4),
+        ]
+
+        for item in course_items:
+            course = item["course"].strip().replace(" ", "\u00A0")
+            provider = item["provider"].strip().replace(" ", "\u00A0")
+            date = item["date"].strip().replace(" ", "\u00A0")
+
+            courses_section.append(
+                Paragraph(
+                    f"<b>{course}</b> — {provider}",
+                    project_title_style,
+                )
+            )
+
+            courses_section.append(
+                Paragraph(
+                    f"•\u00A0{date}",
+                    bullet_body_style,
+                )
+            )
+
+        bottom_sections.append(courses_section)
 
 # --------------------------------------------------
 # LANGUAGES
@@ -889,6 +891,28 @@ def generate_cv_pdf(
             story.append(
                 Table(
                     [[education_section]],
+                    colWidths=[doc.width],
+                    hAlign="LEFT",
+                    style=TableStyle(
+                        [
+                            ("VALIGN", (0, 0), (-1, -1), "TOP"),
+                            ("LEFTPADDING", (0, 0), (-1, -1), 0),
+                            ("RIGHTPADDING", (0, 0), (-1, -1), 0),
+                            ("TOPPADDING", (0, 0), (-1, -1), 0),
+                            ("BOTTOMPADDING", (0, 0), (-1, -1), 0),
+                        ]
+                    ),
+                )
+            )
+
+        # --------------------------------------------------
+        # COURSES — FULL WIDTH
+        # --------------------------------------------------
+
+        if courses_section:
+            story.append(
+                Table(
+                    [[courses_section]],
                     colWidths=[doc.width],
                     hAlign="LEFT",
                     style=TableStyle(
