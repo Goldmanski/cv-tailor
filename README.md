@@ -1,18 +1,12 @@
 # 📄 CVTailor
 
-An AI-powered Streamlit application for creating professional, job-tailored CVs and generating one-page PDF documents.
+An AI-powered Streamlit application for generating professional, job-tailored CVs as one-page PDF documents.
 
-CVTailor allows users to enter their professional information, provide a target job offer and company details, and generate a tailored professional profile using the OpenAI API.
+## 🚀 Live Demo
 
-The application combines AI-generated content with deterministic PDF generation, input validation, and dynamic document layout.
+[https://cv-tailor-ai.streamlit.app](https://cv-tailor-ai.streamlit.app)
 
----
-
-# 🚀 Live Demo
-
-https://cv-tailor-ai.streamlit.app
-
-The application allows users to enter their professional information, validate the provided data, generate a tailored CV, and download the final document as a PDF.
+Users can enter their professional background and target job details, generate a tailored CV, and download the finished PDF.
 
 ---
 
