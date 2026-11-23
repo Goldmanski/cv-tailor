@@ -980,6 +980,7 @@ def generate_cv_pdf(
                     doc.width * 0.48,
                 ],
                 hAlign="LEFT",
+                splitInRow=1,
             )
 
             lower_table.setStyle(

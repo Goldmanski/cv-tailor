@@ -1,4 +1,4 @@
-streamlit
-openai
-python-dotenv
-reportlab
+streamlit==1.43.2
+openai==1.107.1
+python-dotenv==0.21.0
+reportlab==5.0.0
