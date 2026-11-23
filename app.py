@@ -2352,6 +2352,15 @@ if st.session_state.volunteering:
             activity["description"].strip()
         )
 
+        activity_description_html = ""
+
+        if activity_description:
+            activity_description_html = (
+                '<div class="cv-volunteering-description cv-bullet">'
+                f'• {activity_description}'
+                '</div>'
+            )
+
         volunteering_item_html = f"""
         <div class="cv-volunteering-item">
 
@@ -2366,9 +2375,7 @@ if st.session_state.volunteering:
                 • {activity_date}
             </div>
 
-            <div class="cv-volunteering-description cv-bullet">
-                • {activity_description}
-            </div>
+            {activity_description_html}
 
         </div>
         """
