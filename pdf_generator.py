@@ -893,6 +893,7 @@ def generate_cv_pdf(
                     [[education_section]],
                     colWidths=[doc.width],
                     hAlign="LEFT",
+                    splitInRow=1,
                     style=TableStyle(
                         [
                             ("VALIGN", (0, 0), (-1, -1), "TOP"),
@@ -915,6 +916,7 @@ def generate_cv_pdf(
                     [[courses_section]],
                     colWidths=[doc.width],
                     hAlign="LEFT",
+                    splitInRow=1,
                     style=TableStyle(
                         [
                             ("VALIGN", (0, 0), (-1, -1), "TOP"),
@@ -937,6 +939,7 @@ def generate_cv_pdf(
                     [[volunteering_section]],
                     colWidths=[doc.width],
                     hAlign="LEFT",
+                    splitInRow=1,
                     style=TableStyle(
                         [
                             ("VALIGN", (0, 0), (-1, -1), "TOP"),
